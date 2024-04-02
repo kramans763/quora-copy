@@ -1,0 +1,102 @@
+.user-info-popup {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 8px); 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: white;
+    border: 1px solid #ddd;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    gap: 5px;
+    
+  }
+ .popup-close{
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+ } 
+.user-info-popup-top{
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.userPic{
+    width: 35px;
+    height: 35px;
+    background-color: #22C55E;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    font-weight: 600;
+    font-size: 28px;
+}
+  .user-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    
+   
+  }
+  .user-info-popup-contents{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+  }
+  .user-info-popup-content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+    gap: 8px;
+    white-space: nowrap;
+    padding: 3px 2px;
+    
+  }
+  .user-info-popup-content:hover{
+    background-color: rgba(0, 0, 0, 0.1) ;
+   
+  }
+  .user-info-popup-down{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    padding: 2px 20px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  .user-info-popup-down p{
+    padding: 1px 2px;
+  }
+ 
+  .user-info-popup-down p:hover{
+    background-color: rgba(0, 0, 0, 0.1) ;
+  }
+
+  .user-info-popup-footer{
+    margin-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    padding: 5px;
+  }
+  .user-info-popup-footer a{
+    text-decoration: none;
+    color:#939598;
+    padding: 0px 2px;
+   
+  }
+  @media (max-width: 1048px){
+    .user-info-popup{
+        top: 0; 
+        width: 25%;
+        left: 12.5%;
+    }
+  }

@@ -1,0 +1,96 @@
+.userComponent-page{
+    width: 100%;
+    background-color: white;
+    margin-top: 45px;
+    height: 100vh;
+   
+}
+.userComponent{
+    width: 85%;
+    margin: auto;
+    padding: 40px 10px;
+    display: flex;
+    justify-content: space-around;
+   
+}
+.userComponent-left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+
+}
+.userComponent-left-top{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+    
+}
+.userComponent-left-top-left img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.userComponent-left-top-right{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+
+}
+.userComponent-author{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.userComponent-follow-btn{
+    display: flex ;
+    justify-content: center;
+    gap: 5px;
+    align-items: center ;
+    background-color: #3B82F6;
+    border-radius: 30px;
+    padding: 5px 15px;
+    width: fit-content;
+}
+
+.userComponent-right{
+   display: flex;
+   flex-direction: column;
+   gap: 10px; 
+}
+.userComponent-right-top{
+   padding-bottom: 10px;
+   border-bottom: 1px solid rgba(0,0,0,0.1);
+   font-weight: 600;
+   font-size: 13px;
+}
+.userComponent-right-lower{
+    font-size: 13px;
+}
+.phone-number{
+    font-weight: 300;
+}
+
+@media (max-width: 1048px){
+    .userComponent-page{
+        padding-top: 50px;
+
+    }
+    .userComponent{
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+    }
+    .userComponent-left{
+        width: 70%;
+    }
+    .userComponent-right{
+        width: 70%;
+    }
+
+}

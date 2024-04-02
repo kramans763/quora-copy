@@ -1,0 +1,190 @@
+.qheader{
+    background-color: white; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: block;
+    z-index: 3;
+    box-shadow: 0px 5px 8px -9px rgba(0,0,0,0.5);
+    padding: 5px;
+   
+    
+}
+.mobile-navbar-top{
+  display: none;
+}
+.mobile-navbar{
+  display: none;
+}
+.header-inner-conatiner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+    gap: 30px;
+}
+.qheader-logo >img{
+     height: 30px;
+     margin-left: auto; 
+}
+.qheader-icons{
+    display: flex;
+    gap: 30px; 
+    align-items: center;
+    
+  
+}
+
+.qheader-icon {
+    cursor: pointer;
+    font-size: 25px;
+    position: relative; 
+    padding: 2px 5px;
+    
+}
+.qheader-icon.clicked{
+   color: #991B1B;
+}
+.qheader-icon:hover{
+ 
+    background-color: lightgray;
+}
+.qheader-input{
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+   
+    
+}
+.qheader-input >input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: rgb(49,49,49);
+    width: 100%;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.qheader-rem{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+.try-quora-plus button{
+  padding: 3px 8px;
+  border-radius: 30px;
+  border: 1px solid #E2E8F0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.qheader-avatar{
+    cursor: pointer;
+    position: relative;
+    font-size: 25px;
+}
+.userName{
+    width: 25px;
+    height: 25px;
+    background-color: #166534;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.add-ques-btn{
+    
+    color: white;
+    text-transform: inherit;
+    background-color: #b92b27;
+    white-space: nowrap;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+.add-ques-btn:hover{
+    color: white;
+    background: #8f1f1b;
+}
+
+
+  
+ 
+
+  .language-popup {
+    position: absolute;
+    top: calc(100% + 10px); 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 200px; 
+    background-color: white;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 999; 
+    font-size: 13px;
+  }
+
+  
+  .language-popup-top {
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc; /* Add separator line */
+  }
+  
+  .language-popup-bottom {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .language-popup-bottom-left{
+    display: flex;
+    gap: 5px;
+  }
+  
+ 
+  .language-popup-bottom div {
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+
+  .sign-tick img {
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%;
+  }
+
+
+  @media (max-width: 1048px) {
+   
+    .qheader {
+      display: none;
+    }
+  
+    .mobile-navbar {
+      display: block;
+    }
+    .mobile-navbar-top{
+      display: block;
+    }
+    .language-popup{
+      left: 88%; 
+      top: calc(100% ); 
+    }
+  }
+
+
+  
+
+ 

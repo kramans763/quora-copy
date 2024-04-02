@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: 1px solid gray;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+}
+.loginLogo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 40%;
+}
+.signup_form {
+    padding: 10px 40px;
+}
+.signupBttn{
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.tag {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(37, 152, 247);
+}
+
+.tag:hover {
+    color: rgb(16, 77, 126);
+}
+.error-text{
+    color: red;
+}

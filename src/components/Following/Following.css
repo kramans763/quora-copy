@@ -1,0 +1,24 @@
+.following{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(241,241,241);
+}
+.following-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15%;
+    flex-direction: column;
+}
+.following-content img{
+    width: 110px;
+    height: 110px;
+}
+@media (max-width: 1048px){
+    .sidebar-following{
+        display: none;
+    }
+    .following-content{
+        padding-top: 50px;
+    }
+}

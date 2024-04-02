@@ -1,0 +1,27 @@
+.search-page{
+    width: 50%;
+    margin: auto;
+    padding-top: 70px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+.search-page-top{
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    background-color: white;
+    padding: 10px;
+    align-items: center;
+}
+.search-page-top img{
+    width: 30px;
+    height: 30px; 
+}
+
+@media (max-width: 1048px){
+    .search-page{
+        width: 60%;
+        padding-top: 110px;
+    }
+}

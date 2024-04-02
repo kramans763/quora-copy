@@ -1,0 +1,10 @@
+.main-feed{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.main-feed-content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

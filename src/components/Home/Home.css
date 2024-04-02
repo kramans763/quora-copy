@@ -1,0 +1,64 @@
+.quora{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(241,241,241);
+    overflow-x: hidden;
+   
+}
+.main-content{
+    display: flex;
+    /* justify-content: space-around; */
+    padding: 60px 10px;
+    gap: 20px;
+    width: 85%;
+    margin: auto;
+    
+
+}
+.sidebar-home{
+   flex: 0.5;
+   
+   
+}
+.feeds{
+    flex: 1.8;
+    
+    
+ 
+}
+.advertisement{
+    
+    flex: 1.2;
+    padding-top: 10px;
+     
+    
+}
+.advertisement-top{
+   padding: 10px;
+   border: 1px solid rgba(0,0,0,0.2);
+}
+.advertisement-middle{
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+ }
+ .advertisement-lower{
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+ }
+ 
+
+
+@media (max-width: 1048px) {
+  
+  .sidebar-home {
+    display: none;
+  }
+  .advertisement{
+    display: none;
+  }
+  .feeds{
+    padding-top: 50px;
+  }
+
+}

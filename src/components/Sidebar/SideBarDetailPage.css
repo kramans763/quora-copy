@@ -1,0 +1,64 @@
+.feed-sidebar{
+    flex: 1.8;
+}
+.sidebar-page-detail{
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+    gap: 15px;
+    background-color: white;
+    
+}
+.sidebar-page-detail img{
+    width: 80px;
+    height: 80px;
+}
+.name-follow{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+   
+}
+.ch-name{
+    text-align: center;
+}
+.follow-btn{
+    padding: 2px 10px;
+    border-radius: 15px;
+    border: 1px solid #4C8AF5;
+    color: #4C8AF5;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.following  {
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.read{
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    
+}
+
+.other{
+    flex: 0.8;
+}
+.related-topic{
+    background-color: white;
+    
+}
+.related-topic p:first-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 5px; 
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  .related-topic p:last-child{
+    text-align: center;
+    padding-bottom: 5px;
+  }
