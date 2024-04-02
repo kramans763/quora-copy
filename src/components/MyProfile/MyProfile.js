@@ -47,7 +47,7 @@ const MyProfile = () => {
 
   return (
     <>
-    {isPageOpen && (
+    {isLoggedIn && isPageOpen && (
     <div className="user-info-popup dark:bg-neutral-800 dark:text-zinc-400" >
       <div className='popup-close' onClick={handleClose}>
             <RxCross2/>

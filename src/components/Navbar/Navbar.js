@@ -8,11 +8,11 @@ import {IoNotificationsOutline} from 'react-icons/io5';
 import {GoSearch} from 'react-icons/go'
 import {MdOutlineLanguage} from 'react-icons/md';
 import { HiUserGroup } from "react-icons/hi";
-import { PiCaretDown } from "react-icons/pi";
+
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import signTick from "../../assets/signTick.jpg"
-import { useDispatch, useSelector } from 'react-redux';
+
 
 import MyProfile from '../MyProfile/MyProfile';
 import MobileNavbar from '../MobileNavbar/MobileNavbar';
@@ -23,12 +23,12 @@ const Navbar = () => {
   const navigate=useNavigate();
   const location = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userName, setUserName] = useState('');
+  // const [userName, setUserName] = useState('');
   const [showUserInfo, setShowUserInfo] = useState(false);
   const userData = JSON.parse(localStorage.getItem('userData'));
   const [showLanguagePopup, setShowLanguagePopup] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const dispatch = useDispatch();
+  
   const [lastClickedIcon, setLastClickedIcon] = useState(null);
 
   useState(() => {
@@ -59,26 +59,20 @@ const Navbar = () => {
   };
  
 
-  useEffect(() => {
-    
+  useEffect(() => { 
     const authToken = localStorage.getItem('authToken');
-
-    if (authToken) {
-      
+    if (authToken) {  
       setIsLoggedIn(true);
-      // const userData = JSON.parse(localStorage.getItem('userData'));
-      if (userData && userData.name) {
-        setUserName(userData.name);
-      }
+     
     }
   }, []);
 
-  const handleLogout = () => {
+  // const handleLogout = () => {
 
-    localStorage.removeItem('authToken');
-    setIsLoggedIn(false);
-    navigate('/login');
-  };
+  //   localStorage.removeItem('authToken');
+  //   setIsLoggedIn(false);
+  //   navigate('/login');
+  // };
 
   const toggleUserInfo = () => {
     setShowUserInfo(!showUserInfo);
@@ -87,9 +81,9 @@ const Navbar = () => {
     handleIconClick('answer');
     navigate('/answer')
   }
-  const handleProfile=()=>{
-    navigate('/login')
-  }
+  // const handleProfile=()=>{
+  //   navigate('/login')
+  // }
 
   const handleAddQustion=()=>{
     navigate('/addQues')

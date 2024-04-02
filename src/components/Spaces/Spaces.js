@@ -15,9 +15,9 @@ const Spaces = () => {
     const dispatch=useDispatch();
     const channels = useSelector((state) => state.reducer.channels);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [buttonDisabled, setButtonDisabled] = useState(true);
+    // const [title, setTitle] = useState('');
+    // const [description, setDescription] = useState('');
+    // const [buttonDisabled, setButtonDisabled] = useState(true);
   
     const navigate=useNavigate();
 
@@ -33,7 +33,7 @@ const Spaces = () => {
     useEffect(()=>{
       dispatch(getChannels());
       
-    },[]);
+    },[dispatch]);
     console.log("ch", channels);
 
   

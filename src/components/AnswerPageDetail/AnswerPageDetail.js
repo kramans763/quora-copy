@@ -20,6 +20,9 @@ const AnswerPageDetail = () => {
      const [selectedId, setSelectedId] = useState('');
      const [activeDownvotes, setActiveDownvotes] = useState({});
 
+
+
+  useEffect(() => {
     const fetchPostData = async () => {
       const authToken=localStorage.getItem('authToken');
       try {
@@ -31,17 +34,16 @@ const AnswerPageDetail = () => {
          });
          let data = await response.json();
          data=data.data;
-         setComments(data); // Update state with fetched data
+         setComments(data); 
         
     } catch (error) {
       console.error('Error fetching data:', error);
       
     }
   };
-
-  useEffect(() => {
     fetchPostData(); 
-  }, [id, fetchPostData]);
+  }, [id]);
+
   const openPopup = (title, id) => {
     setSelectedTitle(title);
     setSelectedId(id);

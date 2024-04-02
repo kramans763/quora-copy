@@ -5,11 +5,11 @@ import App from './App';
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware,compose } from "redux";
 import reducer from './Reducer';
-import { composeWithDevTools } from "redux-devtools-extension";
+// import { composeWithDevTools } from "redux-devtools-extension";
 import { combineReducers } from "redux";
 import { BrowserRouter } from 'react-router-dom';
 import { thunk } from 'redux-thunk';
-import thunkMiddleware from 'redux-thunk';
+// import thunkMiddleware from 'redux-thunk';
 
 const rootReducer = combineReducers({
    reducer

@@ -73,7 +73,7 @@ const Answer = () => {
              </div>
              <div className='answers dark:bg-neutral-800 dark:text-zinc-400 '>
               <div className='answer-heading'>
-                <img src={starLogo}/>
+                <img src={starLogo} alt='star'/>
                 <p>Questions for you</p>
              </div>
              <div className='answers-list'>

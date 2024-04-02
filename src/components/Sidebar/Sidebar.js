@@ -5,16 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IoIosAdd } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import spaceImg from "../../assets/space 2.webp"
-import { RxCross2 } from "react-icons/rx";
+
 import CreateSpace from '../Spaces/CreateSpace';
 
 const Sidebar = () => {
   const dispatch=useDispatch();
   const channels = useSelector((state) => state.reducer.channels);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [buttonDisabled, setButtonDisabled] = useState(true);
+  // const [title, setTitle] = useState('');
+  // const [description, setDescription] = useState('');
+  // const [buttonDisabled, setButtonDisabled] = useState(true);
   const navigate=useNavigate();
 
   const openPopup = () => {
@@ -25,18 +25,18 @@ const Sidebar = () => {
   const closePopup = () => {
     setIsPopupOpen(false);
   };
-  const toggleButton = () => {
+  // const toggleButton = () => {
       
-    if (title.trim() !== '' && description.trim() !== '') {
-      setButtonDisabled(false);
-    } else {
-      setButtonDisabled(true);
-    }
-  };
+  //   if (title.trim() !== '' && description.trim() !== '') {
+  //     setButtonDisabled(false);
+  //   } else {
+  //     setButtonDisabled(true);
+  //   }
+  // };
   
-  const handleUnderConst=()=>{
-   navigate('/working');
-  }
+  // const handleUnderConst=()=>{
+  //  navigate('/working');
+  // }
 
   const handlePageDetail=(name, description)=>{
      navigate('/channel_detail_page' , { state: {name , description} } );
@@ -51,7 +51,7 @@ const Sidebar = () => {
   useEffect(()=>{
     dispatch(getChannels());
     
-  },[]);
+  },[dispatch]);
   
   return (
     <>
