@@ -17,7 +17,7 @@ const CreateSpace = ({channels, handlePageDetail, isOpen, onClose}) => {
       };
   return (
     isOpen && (
-    <div className='popup '> 
+    <div className='popup dark:bg-neutral-900 dark:text-zinc-400'> 
     <div className='popup-content dark:bg-neutral-700 dark:text-zinc-400'>
        <div className='close' onClick={onClose}>
            <RxCross2/>
