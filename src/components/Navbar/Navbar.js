@@ -174,7 +174,7 @@ const Navbar = () => {
           </div>
           <div className='qheader-avatar' onClick={toggleUserInfo}> 
             <div className='userName'>
-                {userData.name[0].toUpperCase()}
+                {userData?.name[0].toUpperCase()}
             </div>
             {showUserInfo && isLoggedIn && (
               <MyProfile/>
