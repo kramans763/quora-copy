@@ -190,3 +190,8 @@
     background-color: #f1f2f2;
     border: 1px solid black;
 }
+@media (max-width: 1048px){
+    .loginPage{
+        width: 90%;
+    }
+}
