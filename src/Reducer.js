@@ -17,13 +17,7 @@ const initialState = {
         return{
           ...state,
           channels:action.channels,
-        } 
-      case "SETPOSTS":
-        console.log("poooo",action.posts)
-        return{
-          ...state,
-          posts:[...action.posts],
-          } 
+        }  
          
       default:
         return state;
