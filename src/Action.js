@@ -21,7 +21,7 @@ export const getPosts = () => {
       });
     } catch (error) {
       console.error('Error fetching posts:', error);
-      // Optionally dispatch an error action or handle the error in any other way.
+      
     }
   };
 };
