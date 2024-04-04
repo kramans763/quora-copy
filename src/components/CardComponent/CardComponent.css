@@ -104,7 +104,7 @@
     gap: 10px;
     background-color: #F1F5F9; 
     align-items: center;
-   padding: 10px;
+    padding: 10px;
 }
 .comments-top-user{
     width: 30px;
@@ -178,7 +178,8 @@
   }
   @media (max-width: 1048px){
     .comments-top{
-        padding-left: 20px;
+        padding-right: 10px;
+        gap: 5px;
     }
   }
 
