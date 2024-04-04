@@ -176,4 +176,11 @@
 .downvote.active {
     color: #C2410C;
   }
+  @media (max-width: 1048px){
+    .comments-top{
+        margin-left: 10px;
+    }
+  }
+
+  
   
