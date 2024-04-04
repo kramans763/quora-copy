@@ -86,6 +86,7 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 12px;
     padding: 5px;
+   
   }
   .user-info-popup-footer a{
     text-decoration: none;
@@ -97,6 +98,7 @@
     .user-info-popup{
         top: 0; 
         width: 50%;
-        left: 12.5%;
+        left: 20%;
+        justify-content: center;
     }
   }
