@@ -168,7 +168,29 @@
 }
 .comments-content-lower{
     padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
+.comment-popup{
+    position: absolute;
+    left: 57%;
+    margin-top: 20px;
+    width: 70px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 99999;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+
+}
+ .comment-popup p{
+   text-align: center;
+} 
 .like-expression.active {
     color: blue;
   }
@@ -180,6 +202,10 @@
     .comments-top{
         padding-right: 10px;
         gap: 5px;
+    }
+    .comment-popup{
+        left: 85%;
+
     }
   }
 

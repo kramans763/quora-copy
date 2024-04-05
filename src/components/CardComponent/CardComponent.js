@@ -4,7 +4,7 @@ import { BiSolidUpvote } from "react-icons/bi";
 import { BiSolidDownvote } from "react-icons/bi";
 import { FaRegComment } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
-
+import { BsThreeDots } from "react-icons/bs";
 
 const CardComponent = ({ pageType, item,  userData}) => {
     const { author, content,  title, likeCount, commentCount, _id } = item;
@@ -19,6 +19,13 @@ const CardComponent = ({ pageType, item,  userData}) => {
     const [commentsTopOpenId, setCommentsTopOpenId] = useState(null);
     const navigate=useNavigate();
     const [followStatus, setFollowStatus] = useState(false); 
+    const [isCommentPopupOpen, setIsCommentPopupOpen] = useState(false);
+    const [selectedCommentId, setSelectedCommentId] = useState(null);
+
+    const togglePopup = (commentId) => {
+      setIsCommentPopupOpen(!isCommentPopupOpen);
+      setSelectedCommentId(commentId);
+    };
 
     const toggleFollow = () => {
         setFollowStatus(!followStatus); 
@@ -60,10 +67,11 @@ const CardComponent = ({ pageType, item,  userData}) => {
            });
            let data = await response.json();
            data=data.data;
+           console.log("comment", data);
            setComments(data);
            setCommentOpenId(id);
            setCommentsTopOpenId(id);
-          
+           
           } catch (error) {
            console.error('Error fetching data:', error);
         
@@ -71,6 +79,7 @@ const CardComponent = ({ pageType, item,  userData}) => {
          setIsCommentOpen(!isCommentOpen);
         
       }
+      
       const postAnswer = async (id) => {
         try {
           const response = await fetch(`https://academics.newtonschool.co/api/v1/quora/comment/${id}`, {
@@ -86,7 +95,7 @@ const CardComponent = ({ pageType, item,  userData}) => {
           });
     
           if (response.ok) {
-             
+            window.location.reload();
             alert('Answer posted successfully');
             
           } else {
@@ -97,6 +106,28 @@ const CardComponent = ({ pageType, item,  userData}) => {
         }
       };
 
+      const handleDeleteComment = async (commentId) => {
+        try {
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/quora/comment/${commentId}`, {
+                method: 'DELETE',
+                headers: {
+                  'Authorization': `Bearer ${authToken}`,
+                  'projectID': 'f104bi07c490'
+                }
+                  
+            });
+            if (response.ok) { 
+                window.location.reload();   
+                alert('Comment deleted successfully');
+            } else {
+               
+                alert('Failed to delete comment');
+            }
+        } catch (error) {
+            console.error('Error deleting comment:', error);
+        }
+    };
+
       const handlePageDetail=(id, title)=>{
         const updatedTitle=title.toLowerCase().replaceAll(" ", "-");
 
@@ -106,7 +137,7 @@ const CardComponent = ({ pageType, item,  userData}) => {
       const handleUserDetail=(item)=>{
         navigate('/user' , { state: {item} } )
       }
-
+      
   return (
     <div className='card dark:bg-neutral-800 dark:text-zinc-400'>
       {
@@ -167,10 +198,18 @@ const CardComponent = ({ pageType, item,  userData}) => {
                     <div className='comments-content'>
                       <div className='comments-content-upper'>
                         <img src='https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png' alt='img' />
-                        <p>user</p>
+                        <p>{comment.author_details?.name}</p>
                       </div>
                       <div className='comments-content-lower'>
                         <p>{comment.content}</p>
+                        {comment.author_details._id === userData._id && (
+                          <div onClick={() => togglePopup(comment._id)}><BsThreeDots /></div>
+                        )}
+                        {isCommentPopupOpen && selectedCommentId === comment._id && (
+                          <div className='comment-popup'>
+                            <p onClick={() => handleDeleteComment(comment._id)}>Delete</p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   )

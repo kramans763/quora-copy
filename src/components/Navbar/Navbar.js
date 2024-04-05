@@ -132,8 +132,8 @@ const Navbar = () => {
     <div>
     <div className='qheader dark:bg-neutral-800 dark:text-zinc-400' >
       <div className='header-inner-conatiner'>
-        <div className='qheader-logo'>
-            <img src="https://seeklogo.com/images/Q/quora-logo-2E2DD559F2-seeklogo.com.png" alt="" />
+        <div className='qheader-logo' onClick={handleHome}>
+            <img src="https://seeklogo.com/images/Q/quora-logo-2E2DD559F2-seeklogo.com.png" alt="logo" />
         </div>
         <div className='qheader-icons'>
             <div  className={`qheader-icon ${lastClickedIcon === 'home' ? 'clicked' : ''}`} onClick={handleHome}>
