@@ -24,9 +24,16 @@
     margin: auto;
     gap: 30px;
 }
+.qheader-logo {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+ 
+ }
 .qheader-logo img{
-     height: 30px;
-     margin-left: auto; 
+    height: 30px;
+    max-width: 100%;
+    cursor: pointer;
 }
 .qheader-icons{
     display: flex;

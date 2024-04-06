@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Feed.css"
 import { getPosts } from '../../Action';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ const Feed = ({ searchResults, pageType }) => {
    
    const feedDetails = useSelector((state) => state.reducer.posts);
    const dispatch=useDispatch();
-   
+   const [updatedFeedDetails, setUpdatedFeedDetails] = useState([]);
    const userData = JSON.parse(localStorage.getItem('userData'));
    
    console.log("feed", feedDetails);
@@ -19,7 +19,19 @@ const Feed = ({ searchResults, pageType }) => {
       dispatch(getPosts());
     
    },[dispatch]) 
-
+   
+   useEffect(() => {
+      // Assuming feedDetails is updated after fetching posts
+      setUpdatedFeedDetails(feedDetails);
+   }, [feedDetails]);
+  
+   const updateCommentCount = (itemId, newCount) => {
+      setUpdatedFeedDetails(prevDetails =>
+        prevDetails.map(item =>
+          item._id === itemId ? { ...item, commentCount: newCount } : item
+        )
+      );
+   };
 
   return (
     <div className='main-feed'>
@@ -29,10 +41,11 @@ const Feed = ({ searchResults, pageType }) => {
             </div>
          )}
          <div className='main-feed-content'>
-            {(pageType === 'searchPage' ? searchResults : feedDetails).map((item) => (
+            {(pageType === 'searchPage' ? searchResults : updatedFeedDetails).map((item) => (
                <CardComponent
                   item={item}  
                   userData={userData}
+                  updateCommentCount={updateCommentCount}
                  
                />
             ))}

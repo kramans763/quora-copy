@@ -6,7 +6,7 @@ import { FaRegComment } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { BsThreeDots } from "react-icons/bs";
 
-const CardComponent = ({ pageType, item,  userData}) => {
+const CardComponent = ({ pageType, item,  userData , updateCommentCount}) => {
     const { author, content,  title, likeCount, commentCount, _id } = item;
     const [likes, setLikes] = useState(likeCount || 0);
     const [upVote, setUpVote] = useState(false);
@@ -95,8 +95,13 @@ const CardComponent = ({ pageType, item,  userData}) => {
           });
     
           if (response.ok) {
-            window.location.reload();
-            alert('Answer posted successfully');
+            const newComment = await response.json(); 
+            console.log("newcomment",newComment);
+            const newCommentData=newComment.data;
+            if(newCommentData && newCommentData._id) {
+              setComments(prevComments => [...prevComments, newCommentData]);
+             }
+            updateCommentCount(item._id, item.commentCount + 1);
             
           } else {
             alert('Failed to post answer');
@@ -117,8 +122,8 @@ const CardComponent = ({ pageType, item,  userData}) => {
                   
             });
             if (response.ok) { 
-                window.location.reload();   
-                alert('Comment deleted successfully');
+              setComments(prevComments => prevComments.filter(comment => comment._id !== commentId));      
+              updateCommentCount(item._id, item.commentCount - 1); 
             } else {
                
                 alert('Failed to delete comment');
@@ -194,15 +199,15 @@ const CardComponent = ({ pageType, item,  userData}) => {
             <div className='comments-contents'>
               {
                 comments.length ? comments.map((comment) => {
-                  return (
+                 return (
                     <div className='comments-content'>
                       <div className='comments-content-upper'>
                         <img src='https://qsf.cf2.quoracdn.net/-4-images.new_grid.profile_default.png-26-688c79556f251aa0.png' alt='img' />
-                        <p>{comment.author_details?.name}</p>
+                        <p>{comment.author_details? comment.author_details.name : userData?.name}</p>
                       </div>
                       <div className='comments-content-lower'>
                         <p>{comment.content}</p>
-                        {comment.author_details._id === userData._id && (
+                        {comment.author_details?._id === userData._id && (
                           <div onClick={() => togglePopup(comment._id)}><BsThreeDots /></div>
                         )}
                         {isCommentPopupOpen && selectedCommentId === comment._id && (
