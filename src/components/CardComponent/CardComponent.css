@@ -218,6 +218,9 @@
     .comments-top-button button{
         padding: 5px 8px;
     }
+    .comments-content-lower{
+        justify-content: space-around;
+    }
   }
 
   
