@@ -98,10 +98,9 @@ const CardComponent = ({ pageType, item,  userData , updateCommentCount}) => {
             const newComment = await response.json(); 
             console.log("newcomment",newComment);
             const newCommentData=newComment.data;
-            if(newCommentData && newCommentData._id) {
-              setComments(prevComments => [...prevComments, newCommentData]);
-             }
+            setComments(prevComments => [...prevComments, newCommentData]); 
             updateCommentCount(item._id, item.commentCount + 1);
+            setNewAnswer('');
             
           } else {
             alert('Failed to post answer');
