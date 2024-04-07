@@ -199,6 +199,9 @@
     color: #C2410C;
   }
   @media (max-width: 1048px){
+    .comments{
+        max-width: 100%;
+    }
     .comments-top{
         padding-right: 10px;
         gap: 5px;
@@ -220,8 +223,10 @@
     }
     .comments-content-lower{
         justify-content: flex-start;
-        gap: 400px;
+        gap: 85%;
+        
     }
+   
   }
 
   
