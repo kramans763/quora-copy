@@ -23,7 +23,7 @@ const Navbar = () => {
   const navigate=useNavigate();
   const location = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [userName, setUserName] = useState('');
+ 
   const [showUserInfo, setShowUserInfo] = useState(false);
   const userData = JSON.parse(localStorage.getItem('userData'));
   const [showLanguagePopup, setShowLanguagePopup] = useState(false);
@@ -67,12 +67,7 @@ const Navbar = () => {
     }
   }, []);
 
-  // const handleLogout = () => {
 
-  //   localStorage.removeItem('authToken');
-  //   setIsLoggedIn(false);
-  //   navigate('/login');
-  // };
 
   const toggleUserInfo = () => {
     setShowUserInfo(!showUserInfo);
@@ -81,9 +76,7 @@ const Navbar = () => {
     handleIconClick('answer');
     navigate('/answer')
   }
-  // const handleProfile=()=>{
-  //   navigate('/login')
-  // }
+ 
 
   const handleAddQustion=()=>{
     navigate('/addQues')

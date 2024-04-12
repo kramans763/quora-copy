@@ -25,18 +25,7 @@ const Sidebar = () => {
   const closePopup = () => {
     setIsPopupOpen(false);
   };
-  // const toggleButton = () => {
-      
-  //   if (title.trim() !== '' && description.trim() !== '') {
-  //     setButtonDisabled(false);
-  //   } else {
-  //     setButtonDisabled(true);
-  //   }
-  // };
-  
-  // const handleUnderConst=()=>{
-  //  navigate('/working');
-  // }
+ 
 
   const handlePageDetail=(name, description)=>{
      navigate('/channel_detail_page' , { state: {name , description} } );

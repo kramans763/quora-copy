@@ -45,7 +45,7 @@ const Answer = () => {
       const dislike = (id) => {
         setActiveDownvotes(prevState => ({
           ...prevState,
-          [id]: !prevState[id] // Toggle the active state for the specific ID
+          [id]: !prevState[id] 
         }));
       };
 

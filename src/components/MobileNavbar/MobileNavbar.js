@@ -5,15 +5,11 @@ import {SlNote} from 'react-icons/sl';
 import {IoNotificationsOutline} from 'react-icons/io5';
 import {MdOutlineLanguage} from 'react-icons/md';
 import { Link } from "react-router-dom";
-// import { useCurrentContext } from "../../context/currentContext";
 import { HiUserGroup } from "react-icons/hi";
-// import MyMenu from "../modelsSection/myMenu";
-// import LanguageSection from "../modelsSection/LanguageSection";
 import { RxCross1 } from "react-icons/rx";
 import MyProfile from "../MyProfile/MyProfile";
 import signTick from "../../assets/signTick.jpg"
  const MobileNavbar = () => {
-//   const{profile}=useCurrentContext();
   const[searchClicked,setSearchClicked]=useState(false);
   const[menuOpen,setMenuOpen]=useState(false);
   const[menuClicked,setMenuClicked]=useState('Home')
@@ -21,7 +17,7 @@ import signTick from "../../assets/signTick.jpg"
   const userData = JSON.parse(localStorage.getItem('userData'));
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showUserInfo, setShowUserInfo] = useState(false);
-  // const [userName, setUserName] = useState('');
+  
   const [showLanguagePopup, setShowLanguagePopup] = useState(false);
   useEffect(() => {
     
@@ -30,10 +26,7 @@ import signTick from "../../assets/signTick.jpg"
     if (authToken) {
       
       setIsLoggedIn(true);
-      // const userData = JSON.parse(localStorage.getItem('userData'));
-      // if (userData && userData.name) {
-      //   setUserName(userData.name);
-      // }
+   
     }
   }, []);
 
@@ -119,7 +112,7 @@ import signTick from "../../assets/signTick.jpg"
         </div>
       </div>
         {searchClicked&&
-          //  <SearchSuggestion onClickModel={handleSearchClicked} value={searchClicked} input={inputValue}/>
+         
           <div className=" w-full h-screen absolute bg-zinc-800 bg-opacity-90 " onClick={()=>setSearchClicked(false)}>
 
           </div>

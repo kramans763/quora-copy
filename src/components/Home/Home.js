@@ -1,22 +1,20 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import "./Home.css";
 import Sidebar from '../Sidebar/Sidebar'
 import Feed from '../Feed/Feed';
 
-import { useNavigate } from 'react-router-dom';
-
 
 const Home = () => {
-  const navigate = useNavigate();
+  
  
-  useEffect(() => {
+  // useEffect(() => {
     
-    const authToken = localStorage.getItem('authToken');
-    if (!authToken) {
-      navigate('/login');
-    }
-  }, [navigate]);
+  //   const authToken = localStorage.getItem('authToken');
+  //   if (!authToken) {
+  //     navigate('/login');
+  //   }
+  // }, [navigate]);
   return (
     <div className='quora dark:bg-neutral-900 dark:text-zinc-400' >
         <div className='navbar-home dark:bg-neutral-900 dark:text-zinc-400'>

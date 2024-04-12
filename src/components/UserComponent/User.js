@@ -13,7 +13,7 @@ const User = () => {
     const toggleFollow = () => {
         setFollowStatus(!followStatus); // Toggle follow status
     };
-    console.log("item", item);
+    console.log("user", item);
   return (
     <>
     <Navbar/>
@@ -48,7 +48,7 @@ const User = () => {
            </div>
            <div className='userComponent-right-lower'>
            <p>Phone number: <span className="phone-number">No data found</span></p>
-           <p>Email: <span className="phone-number">{userData.email}</span></p>
+           <p>Email: <span className="phone-number">No data found</span></p>
            <p>joined 2024</p>
            </div>
         </div>

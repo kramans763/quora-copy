@@ -88,9 +88,7 @@ function MobileNavbarTop(){
                     </div>
                     }
                 </div>
-            {/* {searchClicked&&
-                 <SearchSuggestion onClickModel={handleSearchClicked} value={searchClicked} input={inputValue}/>
-            } */}
+            
         </div>
         
     )
