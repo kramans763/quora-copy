@@ -7,7 +7,7 @@ import CardComponent from '../CardComponent/CardComponent';
 const User = () => {
     const { state } = useLocation();
     const{item}=state;
-    const userData = JSON.parse(localStorage.getItem('userData'));
+    const userData = JSON.parse(localStorage.getItem('userData')).user;
     const [followStatus, setFollowStatus] = useState(false); // State to track follow status
 
     const toggleFollow = () => {

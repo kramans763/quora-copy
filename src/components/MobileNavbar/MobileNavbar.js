@@ -14,7 +14,7 @@ import signTick from "../../assets/signTick.jpg"
   const[menuOpen,setMenuOpen]=useState(false);
   const[menuClicked,setMenuClicked]=useState('Home')
  
-  const userData = JSON.parse(localStorage.getItem('userData'));
+  const userData = JSON.parse(localStorage.getItem('userData')).user;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showUserInfo, setShowUserInfo] = useState(false);
   
@@ -81,7 +81,7 @@ import signTick from "../../assets/signTick.jpg"
             <div className="w-full h-[50px] grid place-items-center border-r border-solid border-zinc-300 dark:border-zinc-600">
             <div className={`box-border h-10 flex justify-center cursor-pointer items-center w-full rounded `} onClick={toggleUserInfo}>      
               <div className="w-7 h-7 font-semibold border border-solid border-blue-800 bg-green-800 text-white rounded-full text-center text-lg flex justify-center items-center">
-                <div className="">{userData?.name[0].toUpperCase()}</div>
+                <div className="">{userData && userData.name && userData.name[0]?.toUpperCase()}</div>
               </div>
               {showUserInfo && isLoggedIn && (
                   <MyProfile />

@@ -10,7 +10,7 @@ import ThemeSwitcher from "../Navbar/ThemeSwitcher"
 import { useNavigate } from 'react-router-dom';
 import { RxCross2 } from "react-icons/rx";
 const MyProfile = () => {
-    const userData = JSON.parse(localStorage.getItem('userData'));
+     const userData = JSON.parse(localStorage.getItem('userData')).user;
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userName, setUserName] = useState('');
     const navigate=useNavigate();

@@ -4,7 +4,7 @@ import Navbar from '../Navbar/Navbar';
 
 const MyProfileDetail = () => {
     
-    const userData = JSON.parse(localStorage.getItem('userData'));
+    const userData = JSON.parse(localStorage.getItem('userData')).user;
     const [followStatus, setFollowStatus] = useState(false); 
 
     const toggleFollow = () => {

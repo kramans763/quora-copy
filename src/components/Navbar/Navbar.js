@@ -25,12 +25,12 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
  
   const [showUserInfo, setShowUserInfo] = useState(false);
-  const userData = JSON.parse(localStorage.getItem('userData'));
+  const userData = JSON.parse(localStorage.getItem('userData')).user;
   const [showLanguagePopup, setShowLanguagePopup] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   
   const [lastClickedIcon, setLastClickedIcon] = useState(null);
-
+  console.log("userdata", userData);
   useState(() => {
     const currentPath = location.pathname;
     switch (currentPath) {
@@ -167,7 +167,7 @@ const Navbar = () => {
           </div>
           <div className='qheader-avatar' onClick={toggleUserInfo}> 
             <div className='userName'>
-                {userData?.name[0].toUpperCase()}
+                {userData && userData.name && userData.name[0]?.toUpperCase()}
             </div>
             {showUserInfo && isLoggedIn && (
               <MyProfile/>

@@ -14,6 +14,7 @@ export const getPosts = () => {
 
       const data = await response.json();
       const posts = data.data || [];
+     
       
       dispatch({
         type: 'GETPOSTS',

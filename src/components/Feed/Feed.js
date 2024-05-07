@@ -10,7 +10,7 @@ const Feed = ({ searchResults, pageType }) => {
    const feedDetails = useSelector((state) => state.reducer.posts);
    const dispatch=useDispatch();
    const [updatedFeedDetails, setUpdatedFeedDetails] = useState([]);
-   const userData = JSON.parse(localStorage.getItem('userData'));
+   const userData = JSON.parse(localStorage.getItem('userData')).user;
    
    console.log("feed", feedDetails);
   
